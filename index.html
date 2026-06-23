@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <title>Random Vimeo Player</title>
-  <script src="https://player.vimeo.com/api/player.js"></script>
 
   <style>
     html, body {
@@ -15,7 +14,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: sans-serif;
     }
 
     .stage {
@@ -37,7 +35,11 @@
 
 <body>
   <div class="stage">
-    <div id="player"></div>
+    <iframe
+      id="vimeoPlayer"
+      allow="autoplay; fullscreen; picture-in-picture"
+      allowfullscreen>
+    </iframe>
   </div>
 
   <script>
@@ -49,21 +51,13 @@
       return videos[Math.floor(Math.random() * videos.length)];
     }
 
-    const player = new Vimeo.Player('player', {
-      id: randomVideo(),
-      width: 1000,
-      height: 1000,
-      autoplay: false,
-      muted: false,
-      controls: true,
-      responsive: true
-    });
+    function loadRandomVideo() {
+      const id = randomVideo();
+      const player = document.getElementById('vimeoPlayer');
+      player.src = `https://player.vimeo.com/video/${id}?autoplay=0&muted=0&controls=1`;
+    }
 
-    player.on('ended', function() {
-      player.loadVideo(randomVideo()).then(function() {
-        player.play();
-      });
-    });
+    loadRandomVideo();
   </script>
 </body>
 </html>
