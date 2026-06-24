@@ -70,7 +70,12 @@
     iframe.src = makeUrl(randomVideo());
 
     const player = new Vimeo.Player(iframe);
-    player.setLoop(false);
+
+    player.setQuality('1080p').catch(function(error) {
+    console.log('1080p not available');
+    });
+
+player.setLoop(false);
 
     let changingVideo = false;
 
@@ -79,10 +84,15 @@ function playNextVideo() {
   changingVideo = true;
 
   player.loadVideo(randomVideo()).then(function() {
-    player.setLoop(false);
-    player.play();
-    changingVideo = false;
+  player.setLoop(false);
+
+  player.setQuality('1080p').catch(function(error) {
+    console.log('1080p not available');
   });
+
+  player.play();
+  changingVideo = false;
+});
 }
 
 player.on('ended', playNextVideo);
