@@ -72,12 +72,26 @@
     const player = new Vimeo.Player(iframe);
     player.setLoop(false);
 
-    player.on('ended', function() {
-      player.loadVideo(randomVideo()).then(function() {
-        player.setLoop(false);
-        player.play();
-      });
-    });
+    let changingVideo = false;
+
+function playNextVideo() {
+  if (changingVideo) return;
+  changingVideo = true;
+
+  player.loadVideo(randomVideo()).then(function() {
+    player.setLoop(false);
+    player.play();
+    changingVideo = false;
+  });
+}
+
+player.on('ended', playNextVideo);
+
+player.on('timeupdate', function(data) {
+  if (data.duration && data.seconds > data.duration - 0.25) {
+    playNextVideo();
+  }
+});
   </script>
 </body>
 </html>
