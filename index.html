@@ -63,16 +63,18 @@
     }
 
     function makeUrl(id) {
-      return `https://player.vimeo.com/video/${id}?autoplay=1&muted=1&controls=1`;
+      return `https://player.vimeo.com/video/${id}?autoplay=1&muted=1&controls=1&loop=0`;
     }
 
     const iframe = document.getElementById('vimeoPlayer');
     iframe.src = makeUrl(randomVideo());
 
     const player = new Vimeo.Player(iframe);
+    player.setLoop(false);
 
     player.on('ended', function() {
       player.loadVideo(randomVideo()).then(function() {
+        player.setLoop(false);
         player.play();
       });
     });
