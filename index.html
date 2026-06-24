@@ -102,6 +102,18 @@ player.on('timeupdate', function(data) {
     playNextVideo();
   }
 });
+
+player.on('pause', function() {
+  setTimeout(function() {
+    player.getPaused().then(function(paused) {
+      if (paused && !changingVideo) {
+        player.play().catch(function() {
+          playNextVideo();
+        });
+      }
+    });
+  }, 1500);
+});
   </script>
 </body>
 </html>
