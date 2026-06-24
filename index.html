@@ -1,15 +1,72 @@
 <!DOCTYPE html>
 <html>
-<body style="margin:0; background:#111; display:flex; align-items:center; justify-content:center; min-height:100vh;">
+<head>
+  <meta charset="UTF-8">
+  <title>Random Vimeo Player</title>
+  <script src="https://player.vimeo.com/api/player.js"></script>
 
-<iframe
-  src="https://player.vimeo.com/video/841476209"
-  width="800"
-  height="800"
-  frameborder="0"
-  allow="autoplay; fullscreen; picture-in-picture"
-  allowfullscreen>
-</iframe>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #111;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
+    .stage {
+      width: min(90vw, 90vh);
+      height: min(90vw, 90vh);
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="stage">
+    <iframe
+      id="vimeoPlayer"
+      allow="autoplay; fullscreen; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <script>
+    const videos = [
+      841476209
+      // add more Vimeo IDs here, separated by commas
+    ];
+
+    function randomVideo() {
+      return videos[Math.floor(Math.random() * videos.length)];
+    }
+
+    function makeUrl(id) {
+      return `https://player.vimeo.com/video/${id}?autoplay=1&muted=1&controls=1`;
+    }
+
+    const iframe = document.getElementById('vimeoPlayer');
+    iframe.src = makeUrl(randomVideo());
+
+    const player = new Vimeo.Player(iframe);
+
+    player.on('ended', function() {
+      player.loadVideo(randomVideo()).then(function() {
+        player.play();
+      });
+    });
+  </script>
 </body>
 </html>
