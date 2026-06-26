@@ -18,37 +18,37 @@
     }
 
     .page {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-}
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+    }
 
-.site-header {
-  text-align: center;
-  line-height: 1.2;
-}
+    .site-header {
+      text-align: center;
+      line-height: 1.2;
+    }
 
-.site-header h1 {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 22px;
-  font-weight: 300;
-  letter-spacing: -0.02em;
-  color: #f2f2f2;
-}
+    .site-header h1 {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 22px;
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      color: #f2f2f2;
+    }
 
-.subtitle {
-  margin-top: 4px;
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 13px;
-  font-weight: 300;
-  letter-spacing: 0.02em;
-  text-transform: lowercase;
-  color: #8a8a8a;
-}
+    .subtitle {
+      margin-top: 4px;
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      letter-spacing: 0.02em;
+      text-transform: lowercase;
+      color: #8a8a8a;
+    }
     
     .stage {
       width: min(90vw, 90vh);
@@ -60,23 +60,23 @@
     }
 
     .social {
-    display: flex;
-    gap: 22px;
-    margin-top: 8px;
-}
+      display: flex;
+      gap: 22px;
+      margin-top: 8px;
+    }
 
-.social img {
-    width: 22px;
-    height: 22px;
-    opacity: 0.55;
-    transition: opacity 0.2s ease,
-                transform 0.2s ease;
-}
+    .social img {
+      width: 22px;
+      height: 22px;
+      opacity: 0.55;
+      transition: opacity 0.2s ease,
+      transform 0.2s ease;
+    }
 
-.social img:hover {
-    opacity: 1;
-    transform: translateY(-1px);
-}
+    .social img:hover {
+      opacity: 1;
+      transform: translateY(-1px);
+    }
 
     iframe {
       width: 100%;
@@ -94,205 +94,205 @@
     </header>
 
     <div class="stage">
-    <iframe
+      <iframe
       id="vimeoPlayer"
       allow="autoplay; fullscreen; picture-in-picture"
       allowfullscreen>
     </iframe>
   </div>
 
-    <div class="social">
+  <div class="social">
 
     <a href="https://instagram.com/benskoppel"
-       target="_blank">
-        <img src="assets/instagram.svg" alt="Instagram">
-    </a>
+    target="_blank">
+    <img src="assets/instagram.svg" alt="Instagram">
+  </a>
 
-    <a href="https://vimeo.com/benkoppel"
-       target="_blank">
-        <img src="assets/vimeo.svg" alt="Vimeo">
-    </a>
+  <a href="https://vimeo.com/benkoppel"
+  target="_blank">
+  <img src="assets/vimeo.svg" alt="Vimeo">
+</a>
 
-    <a href="mailto:benskoppel@gmail.com">
-        <img src="assets/email.svg" alt="Email">
-    </a>
+<a href="mailto:benskoppel@gmail.com">
+  <img src="assets/email.svg" alt="Email">
+</a>
 
 </div>
 
 
-  <script>
-    const videos = [
-      115574968,
-135538913,
-192021956,
-196781954,
-210065574,
-210154290,
-223908137,
-236288579,
-236289184,
-240343756,
-257336310,
-257337265,
-269475887,
-293362448,
-295210923,
-298341097,
-299971468,
-302692308,
-317683102,
-328854004,
-332951666,
-363480705,
-364016195,
-364027056,
-370683790,
-372554814,
-373548009,
-379283353,
-382316239,
-393270023,
-402135080,
-402254043,
-407214563,
-410704862,
-414823675,
-415480298,
-495537716,
-496054984,
-496476751,
-506573192,
-506583459,
-519693256,
-520416937,
-669113913,
-669121007,
-669123222,
-669133113,
-669195517,
-669198298,
-669200386,
-669202123,
-669204067,
-669206205,
-669301899,
-679553724,
-693723175,
-741087508,
-754623945,
-767825994,
-768868736,
-785213990,
-803776298,
-803780448,
-820208543,
-820209229,
-841472788,
-841476209,
-841477572,
-841478557,
-841480229,
-841481078,
-841483088,
-841485670,
-841490234,
-841637281,
-841638978,
-841640452,
-842085176,
-842085737,
-842086321,
-842086747,
-870686677,
-965774689,
-965775916,
-965776304,
-965790635,
-965793716,
-965795513,
-965799387,
-965801362,
-1000000379,
-1028105915,
-1028105953,
-1028105998,
-1028106795,
-1028106845,
-1028106946,
-1028107741,
-1028107802,
-1028107840,
-1028107887,
-1028107942,
-1028107971,
-1028108034,
-1028108095,
-1028108147,
-1028108178,
-1028108247,
-1028110059
-    ];
+<script>
+  const videos = [
+    115574968,
+    135538913,
+    192021956,
+    196781954,
+    210065574,
+    210154290,
+    223908137,
+    236288579,
+    236289184,
+    240343756,
+    257336310,
+    257337265,
+    269475887,
+    293362448,
+    295210923,
+    298341097,
+    299971468,
+    302692308,
+    317683102,
+    328854004,
+    332951666,
+    363480705,
+    364016195,
+    364027056,
+    370683790,
+    372554814,
+    373548009,
+    379283353,
+    382316239,
+    393270023,
+    402135080,
+    402254043,
+    407214563,
+    410704862,
+    414823675,
+    415480298,
+    495537716,
+    496054984,
+    496476751,
+    506573192,
+    506583459,
+    519693256,
+    520416937,
+    669113913,
+    669121007,
+    669123222,
+    669133113,
+    669195517,
+    669198298,
+    669200386,
+    669202123,
+    669204067,
+    669206205,
+    669301899,
+    679553724,
+    693723175,
+    741087508,
+    754623945,
+    767825994,
+    768868736,
+    785213990,
+    803776298,
+    803780448,
+    820208543,
+    820209229,
+    841472788,
+    841476209,
+    841477572,
+    841478557,
+    841480229,
+    841481078,
+    841483088,
+    841485670,
+    841490234,
+    841637281,
+    841638978,
+    841640452,
+    842085176,
+    842085737,
+    842086321,
+    842086747,
+    870686677,
+    965774689,
+    965775916,
+    965776304,
+    965790635,
+    965793716,
+    965795513,
+    965799387,
+    965801362,
+    1000000379,
+    1028105915,
+    1028105953,
+    1028105998,
+    1028106795,
+    1028106845,
+    1028106946,
+    1028107741,
+    1028107802,
+    1028107840,
+    1028107887,
+    1028107942,
+    1028107971,
+    1028108034,
+    1028108095,
+    1028108147,
+    1028108178,
+    1028108247,
+    1028110059
+  ];
 
 // add more Vimeo IDs here, separated by commas
 
 
-    function randomVideo() {
-      return videos[Math.floor(Math.random() * videos.length)];
-    }
+  function randomVideo() {
+    return videos[Math.floor(Math.random() * videos.length)];
+  }
 
-    function makeUrl(id) {
-  return `https://player.vimeo.com/video/${id}?autoplay=1&muted=1&controls=0&loop=0`;
-}
+  function makeUrl(id) {
+    return `https://player.vimeo.com/video/${id}?autoplay=1&muted=1&controls=0&loop=0`;
+  }
 
-    const iframe = document.getElementById('vimeoPlayer');
-    iframe.src = makeUrl(randomVideo());
+  const iframe = document.getElementById('vimeoPlayer');
+  iframe.src = makeUrl(randomVideo());
 
-    const player = new Vimeo.Player(iframe);
-
-    player.setQuality('1080p').catch(function(error) {
-    console.log('1080p not available');
-    });
-
-player.setLoop(false);
-
-    let changingVideo = false;
-
-function playNextVideo() {
-  if (changingVideo) return;
-  changingVideo = true;
-
-  player.loadVideo(randomVideo()).then(function() {
-  player.setLoop(false);
+  const player = new Vimeo.Player(iframe);
 
   player.setQuality('1080p').catch(function(error) {
     console.log('1080p not available');
   });
 
-  player.play();
-  changingVideo = false;
-});
-}
+  player.setLoop(false);
 
-player.on('ended', playNextVideo);
+  let changingVideo = false;
 
-player.on('timeupdate', function(data) {
-  if (data.duration && data.seconds > data.duration - 0.25) {
-    playNextVideo();
-  }
-});
+  function playNextVideo() {
+    if (changingVideo) return;
+    changingVideo = true;
 
-player.on('pause', function() {
-  setTimeout(function() {
-    player.getPaused().then(function(paused) {
-      if (paused && !changingVideo) {
-        player.play().catch(function() {
-          playNextVideo();
-        });
-      }
+    player.loadVideo(randomVideo()).then(function() {
+      player.setLoop(false);
+
+      player.setQuality('1080p').catch(function(error) {
+        console.log('1080p not available');
+      });
+
+      player.play();
+      changingVideo = false;
     });
-  }, 1500);
-});
-  </script>
-  </main>
+  }
+
+  player.on('ended', playNextVideo);
+
+  player.on('timeupdate', function(data) {
+    if (data.duration && data.seconds > data.duration - 0.25) {
+      playNextVideo();
+    }
+  });
+
+  player.on('pause', function() {
+    setTimeout(function() {
+      player.getPaused().then(function(paused) {
+        if (paused && !changingVideo) {
+          player.play().catch(function() {
+            playNextVideo();
+          });
+        }
+      });
+    }, 1500);
+  });
+</script>
+</main>
 </body>
 </html>
