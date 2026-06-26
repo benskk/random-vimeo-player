@@ -149,7 +149,6 @@
     370683790,
     372554814,
     373548009,
-    379283353,
     382316239,
     393270023,
     402135080,
@@ -237,7 +236,7 @@
 
 
   const recentlyPlayed = [];
-  const recentLimit = 10;
+  const recentLimit = Math.min(20, Math.max(5, Math.floor(videos.length / 5)));
 
   function randomVideo() {
     const availableVideos = videos.filter(function(id) {
