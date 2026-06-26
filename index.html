@@ -236,8 +236,24 @@
 // add more Vimeo IDs here, separated by commas
 
 
+  const recentlyPlayed = [];
+  const recentLimit = 10;
+
   function randomVideo() {
-    return videos[Math.floor(Math.random() * videos.length)];
+    const availableVideos = videos.filter(function(id) {
+      return !recentlyPlayed.includes(id);
+    });
+
+    const pool = availableVideos.length > 0 ? availableVideos : videos;
+    const chosen = pool[Math.floor(Math.random() * pool.length)];
+
+    recentlyPlayed.push(chosen);
+
+    if (recentlyPlayed.length > recentLimit) {
+      recentlyPlayed.shift();
+    }
+
+    return chosen;
   }
 
   function makeUrl(id) {
