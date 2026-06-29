@@ -66,7 +66,7 @@
     .next-button {
       position: absolute;
       top: 50%;
-      right: -50px;
+      right: -42px;
       transform: translateY(-50%);
 
       background: none;
@@ -94,6 +94,11 @@
       transform: translateX(2px);
     }
 
+    .next-button:focus-visible {
+      outline: 1px solid rgba(255,255,255,0.4);
+      outline-offset: 6px;
+    }
+
     .social {
       display: flex;
       gap: 22px;
@@ -112,6 +117,17 @@
     .social img:hover {
       opacity: 1;
       transform: translateY(-1px);
+    }
+
+    .social,
+    .next-button {
+      transition: opacity 0.6s ease;
+    }
+
+    .ui-hidden .social,
+    .ui-hidden .next-button {
+      opacity: 0;
+      pointer-events: none;
     }
 
     iframe {
@@ -165,6 +181,9 @@
 
 
 <script>
+
+  // add more Vimeo IDs here, separated by commas
+
   const videos = [
     115574968,
     135538913,
@@ -314,8 +333,6 @@
     1205421826
   ];
 
-// add more Vimeo IDs here, separated by commas
-
 
   const recentlyPlayed = [];
   const recentLimit = Math.min(20, Math.max(5, Math.floor(videos.length / 5)));
@@ -395,6 +412,23 @@
   nextButton.addEventListener("click", function () {
     playNextVideo();
   });
+
+  let hideUiTimer;
+
+  function showUi() {
+    document.body.classList.remove("ui-hidden");
+
+    clearTimeout(hideUiTimer);
+
+    hideUiTimer = setTimeout(function() {
+      document.body.classList.add("ui-hidden");
+    }, 2000);
+  }
+
+  document.addEventListener("mousemove", showUi);
+  document.addEventListener("touchstart", showUi);
+
+  showUi();
 
 </script>
 </main>
