@@ -58,6 +58,41 @@
       justify-content: center;
     }
 
+    .player-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .next-button {
+      position: absolute;
+      top: 18px;
+      right: -52px;
+
+      background: none;
+      border: none;
+      padding: 0;
+
+      cursor: pointer;
+    }
+
+    .next-button img {
+      width: 28px;
+      height: 28px;
+
+      filter: invert(1);
+
+      opacity: 0.45;
+
+      transition:
+      opacity .2s ease,
+      transform .2s ease;
+    }
+
+    .next-button:hover img {
+      opacity: .95;
+      transform: translateX(2px);
+    }
+
     .social {
       display: flex;
       gap: 22px;
@@ -93,12 +128,20 @@
       <div class="subtitle">archive</div>
     </header>
 
-    <div class="stage">
-      <iframe
-      id="vimeoPlayer"
-      allow="autoplay; fullscreen; picture-in-picture"
-      allowfullscreen>
-    </iframe>
+    <div class="player-container">
+
+      <div class="stage">
+        <iframe
+        id="vimeoPlayer"
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <button class="next-button" aria-label="Next video">
+      <img src="assets/next.svg" alt="">
+    </button>
+
   </div>
 
   <div class="social">
@@ -264,7 +307,10 @@
     1205093353,
     1205137104,
     1205137581,
-    439944364
+    439944364,
+    1205415607,
+    1205418768,
+    1205421826
   ];
 
 // add more Vimeo IDs here, separated by commas
@@ -342,6 +388,13 @@
       });
     }, 1500);
   });
+
+  const nextButton = document.querySelector(".next-button");
+
+  nextButton.addEventListener("click", function () {
+    playNextVideo();
+  });
+  
 </script>
 </main>
 </body>
